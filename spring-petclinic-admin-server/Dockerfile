@@ -3,4 +3,4 @@ ARG JAR_FILE=/target/*.jar
 COPY ${JAR_FILE} app.jar
 ENV SPRING_PROFILES_ACTIVE docker,mysql
 EXPOSE 9090
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
